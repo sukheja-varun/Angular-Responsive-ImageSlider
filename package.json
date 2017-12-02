@@ -1,0 +1,27 @@
+{
+  "name": "Angular-Responsive-ImageSlider",
+  "namelower": "angular-responsive-imageslider",
+  "version": "0.0.1",
+  "description": "A repsonsive image slider developed using angularjs and materializecss",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sukheja-varun/Angular-Responsive-ImageSlider.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "gruntify-eslint": "^4.0.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "license": "MIT"
+}
