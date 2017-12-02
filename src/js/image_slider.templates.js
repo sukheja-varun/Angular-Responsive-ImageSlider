@@ -1,4 +1,4 @@
-angular.module('temaplteCacher', []).run(['$templateCache', function($templateCache) {
+angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('views/template1.html',

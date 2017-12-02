@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             options: {force: true},
             dist: ['dist'],
             lib: ['demo/client/lib'],
-            jsTeamplate:['src/js/*.template.js']
+            jsTeamplate: ['src/js/*.template.js']
         },
         eslint: {
             options: {
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
         ngtemplates: {
             image_slider: {
                 options: {
-                    module: 'temaplteCacher',
+                    module: 'templateCacher',
                     standalone: true
                 },
                 cwd: 'src',
@@ -41,8 +41,7 @@ module.exports = function (grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                // src: ['src/js/autocomplete.js', 'src/js/autocomplete.template.js', 'src/js/autocomplete.directive.js', 'src/js/autocomplete.controller.js'],
-                src: ['src/js/*.js'],
+                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },
@@ -68,7 +67,7 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'dist/',
                 src: ['**'],
-                dest: 'demo/client/lib/',
+                dest: 'demo/lib/',
             },
         },
 

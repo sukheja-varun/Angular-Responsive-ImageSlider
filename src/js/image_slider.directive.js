@@ -10,7 +10,7 @@
             // replace: true,
             // controller: 'materialAutocompleteCntrl',
             // controllerAs: 'ISlider',
-            templateUrl: 'views/template2.html',
+            templateUrl: 'views/template1.html',
             link: function (scope, element, attrs, formCtrl) {
 
             }

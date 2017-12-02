@@ -1,32 +1,9 @@
 /* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-02 */(function () {
     'use strict';
-    var ImageSlider = function ($timeout) {
-        return {
-            restrict: 'E',
-            scope: {},
-            // bindToController: {
-            //     id: '@acId',
-            // },
-            // replace: true,
-            // controller: 'materialAutocompleteCntrl',
-            // controllerAs: 'ISlider',
-            templateUrl: 'views/template2.html',
-            link: function (scope, element, attrs, formCtrl) {
-
-            }
-        };
-    };
-
-    angular.module('image_slider')
-        .directive('imageSlider', ['$timeout', ImageSlider]);
+    angular.module('image_slider', ['templateCacher'])
 })();
 
-(function () {
-    'use strict';
-    angular.module('image_slider', [])
-})();
-
-angular.module('temaplteCacher', []).run(['$templateCache', function($templateCache) {
+angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('views/template1.html',
@@ -39,3 +16,26 @@ angular.module('temaplteCacher', []).run(['$templateCache', function($templateCa
   );
 
 }]);
+
+(function () {
+    'use strict';
+    var ImageSlider = function ($timeout) {
+        return {
+            restrict: 'E',
+            scope: {},
+            // bindToController: {
+            //     id: '@acId',
+            // },
+            // replace: true,
+            // controller: 'materialAutocompleteCntrl',
+            // controllerAs: 'ISlider',
+            templateUrl: 'views/template1.html',
+            link: function (scope, element, attrs, formCtrl) {
+
+            }
+        };
+    };
+
+    angular.module('image_slider')
+        .directive('imageSlider', ['$timeout', ImageSlider]);
+})();
