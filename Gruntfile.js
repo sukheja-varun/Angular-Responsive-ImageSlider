@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js'],
+                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js','src/js/imaeg_slider.controller.*.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },

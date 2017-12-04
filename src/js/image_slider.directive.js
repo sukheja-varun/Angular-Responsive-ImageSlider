@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var ImageSlider = function ($timeout) {
+    var imageSliderDirective = function ($timeout) {
         return {
             restrict: 'E',
             scope: {},
@@ -8,9 +8,29 @@
             //     id: '@acId',
             // },
             // replace: true,
-            // controller: 'materialAutocompleteCntrl',
+            controller: '@',
+            name:'templateId',
             // controllerAs: 'ISlider',
-            templateUrl: 'views/template1.html',
+            templateUrl: function (elem, attrs) {
+                var templateUrl;
+                switch (attrs.templateId) {
+                    case 'template1':
+                        templateUrl = 'views/template1.html';
+                        break;
+                    case 'template2':
+                        templateUrl = 'views/template2.html';
+                        break;
+                    case 'template3':
+                        templateUrl = 'views/template3.html';
+                        break;
+                    default:
+                        templateUrl = 'views/template1.html';
+                        break;
+                }
+
+                // return attrs.templateUrl || 'views/template1.html';
+                return templateUrl;
+            },
             link: function (scope, element, attrs, formCtrl) {
 
             }
@@ -18,5 +38,5 @@
     };
 
     angular.module('image_slider')
-        .directive('imageSlider', ['$timeout', ImageSlider]);
+        .directive('imageSlider', ['$timeout', imageSliderDirective]);
 })();
