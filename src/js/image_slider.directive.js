@@ -3,14 +3,17 @@
     var imageSliderDirective = function ($timeout) {
         return {
             restrict: 'E',
-            scope: {},
-            // bindToController: {
-            //     id: '@acId',
-            // },
-            // replace: true,
+            scope: {
+            },
+            bindToController: {
+                id: '@',
+                data:'=',
+                options:'='
+            },
+            replace: true,
             controller: '@',
             name:'templateId',
-            // controllerAs: 'ISlider',
+            controllerAs: 'ctrl',
             templateUrl: function (elem, attrs) {
                 var templateUrl;
                 switch (attrs.templateId) {
@@ -27,12 +30,9 @@
                         templateUrl = 'views/template1.html';
                         break;
                 }
-
-                // return attrs.templateUrl || 'views/template1.html';
                 return templateUrl;
             },
             link: function (scope, element, attrs, formCtrl) {
-
             }
         };
     };

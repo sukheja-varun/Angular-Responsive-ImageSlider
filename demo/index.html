@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.css">
 </head>
 <body ng-app="image_slider_demo">
 <div ng-controller="sliderController">
     {{msg}}
-<image-slider id="a1" template-id="template1"></image-slider>
+    <h1>Hello this is Template1</h1>
+    <image-slider id="7" template-id="template1" data="imgData" options="options"></image-slider>
 </div>
-<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
 <script src="app.js"></script>

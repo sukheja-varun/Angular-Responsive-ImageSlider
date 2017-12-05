@@ -3,22 +3,17 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
   $templateCache.put('views/template1.html',
     "<div class=\"image-slider\">\n" +
-    "    {{name}}\n" +
-    "    <h1>Hello this is template 1</h1>\n" +
-    "\n" +
-    "    <!--<a class=\"waves-effect waves-light btn modal-trigger\" href=\"#modal1\">Modal</a>-->\n" +
-    "\n" +
-    "    <!--&lt;!&ndash; Modal Structure &ndash;&gt;-->\n" +
-    "    <!--<div id=\"modal1\" class=\"modal\">-->\n" +
-    "    <!--<div class=\"modal-content\">-->\n" +
-    "    <!--<h4>Modal Header</h4>-->\n" +
-    "    <!--<p>A bunch of text</p>-->\n" +
-    "    <!--</div>-->\n" +
-    "    <!--<div class=\"modal-footer\">-->\n" +
-    "    <!--<a href=\"#!\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Agree</a>-->\n" +
-    "    <!--</div>-->\n" +
-    "    <!--</div>-->\n" +
-    "\n" +
+    "    <div class=\"slider\">\n" +
+    "        <ul class=\"slides\">\n" +
+    "            <li ng-repeat=\"image in ctrl.data\">\n" +
+    "                <img ng-src=\"{{image.imageUrl}}\" >\n" +
+    "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
+    "                    <h3>{{image.tagLine}}</h3>\n" +
+    "                    <h5 class=\"light grey-text text-lighten-3\">{{image.slogan}}</h5>\n" +
+    "                </div>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "    </div>\n" +
     "</div>"
   );
 
