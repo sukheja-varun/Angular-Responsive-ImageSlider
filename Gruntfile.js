@@ -4,6 +4,7 @@ module.exports = function (grunt) {
         clean: {
             options: {force: true},
             dist: ['dist'],
+            src: ['src/css/*'],
             lib: ['demo/client/lib'],
             jsTeamplate: ['src/js/*.template.js']
         },
@@ -18,8 +19,12 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     sassDir: 'src/scss',
+                    specify: 'src/scss/image_slider.scss',
                     cssDir: 'src/css',
+                    assetCacheBuster: false,
+                    clean:true,
                 }
+
             }
         },
         ngtemplates: {
@@ -41,7 +46,7 @@ module.exports = function (grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js','src/js/imaeg_slider.controller.*.js'],
+                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js', 'src/js/imaeg_slider.controller.*.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "materialize": "0.100.2",
-    "angular": "1.6.7"
+    "angular": "1.6.7",
+    "angular-spinkit": "0.3.4"
   },
   "analytics": false
 }

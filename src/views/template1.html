@@ -1,8 +1,9 @@
-<div class="image-slider">
-    <div class="slider">
+<div class="image-slider template1">
+    <rotating-plane-spinner></rotating-plane-spinner>
+    <div class="slider" valign-wrapper>
         <ul class="slides">
             <li ng-repeat="image in ctrl.data">
-                <img ng-src="{{image.imageUrl}}" >
+                <img ng-src="{{image.imageUrl}}" ng-click="ctrl.enlargeImage(image.imageUrl)">
                 <div class="caption" ng-class="ctrl.options.textAlign">
                     <h3>{{image.tagLine}}</h3>
                     <h5 class="light grey-text text-lighten-3">{{image.slogan}}</h5>
@@ -10,4 +11,8 @@
             </li>
         </ul>
     </div>
+    <div id="template1-modal" class="modal template1-modal">
+        <img class="responsive-img enlarged-image" ng-src="{{ctrl.enlargedImageUrl}}">
+    </div>
 </div>
+

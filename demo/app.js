@@ -7,7 +7,7 @@
 
         $scope.imgData = [
             {
-                imageUrl: 'https://lorempixel.com/580/250/nature/1',
+                imageUrl: 'https://static.pexels.com/photos/257360/pexels-photo-257360.jpeg',
                 tagLine: 'This is our big Tagline!',
                 slogan: 'Here\'s our small slogan.'
             }, {
