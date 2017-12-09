@@ -3,7 +3,6 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
   $templateCache.put('views/template1.html',
     "<div class=\"image-slider template1\">\n" +
-    "    <rotating-plane-spinner></rotating-plane-spinner>\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
