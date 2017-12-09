@@ -3,10 +3,10 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         clean: {
             options: {force: true},
-            dist: ['dist'],
-            src: ['src/css/*'],
             lib: ['demo/client/lib'],
-            jsTeamplate: ['src/js/*.template.js']
+            jsTemplate: ['src/js/*.template.js'],
+            scripts: ['dist/js'],
+            scss: ['src/css/*', 'dist/css']
         },
         eslint: {
             options: {
@@ -63,7 +63,6 @@ module.exports = function (grunt) {
         },
         copy: {
             css: {
-
                 src: 'src/css/*.css',
                 dest: 'dist/css/<%= pkg.name %>.css'
             },
@@ -93,8 +92,16 @@ module.exports = function (grunt) {
         },
         watch: {
             dist: {
-                files: ['Gruntfile.js', 'src/js/*.js', '!src/js/image_slider.template.js', 'src/scss/*.scss', 'src/views/*.html'],
+                files: ['Gruntfile.js'],
                 tasks: ['clean', 'eslint', 'compass', 'ngtemplates', 'concat', 'uglify', 'copy:css', 'cssmin', 'copy:lib']
+            },
+            scripts: {
+                files: ['src/js/*.js', '!src/js/image_slider.template.js', 'src/views/*.html'],
+                tasks: ['clean:scripts','clean:jsTemplate','clean:lib', 'eslint', 'ngtemplates', 'concat', 'uglify', 'copy:lib']
+            },
+            scss: {
+                files: ['src/scss/*.scss'],
+                tasks: ['clean:scss', 'clean:lib','compass', 'copy:css', 'cssmin','copy:lib'],
             }
         }
 
