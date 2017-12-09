@@ -30,7 +30,8 @@
             textAlign: 'center-align', // values: 'left-align'|'right-align'|'center-align'
             //below options are from materializecss slider
             indicators: true,
-            height: 400,
+            height: 500, // if not given, it will take default width of 440px
+            width:600, // if not given, it will take full width of parent
             duration: 200,
             interval: 4000
         };

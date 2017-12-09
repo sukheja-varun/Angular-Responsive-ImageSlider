@@ -1,6 +1,6 @@
 <div class="image-slider template1">
     <rotating-plane-spinner></rotating-plane-spinner>
-    <div class="slider" valign-wrapper>
+    <div class="slider" ng-style="{'width': ctrl.options.width}">
         <ul class="slides">
             <li ng-repeat="image in ctrl.data">
                 <i class="material-icons zoom-out-icon" ng-click="ctrl.enlargeImage(image.imageUrl)">zoom_out_map</i>
