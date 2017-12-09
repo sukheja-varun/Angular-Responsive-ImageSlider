@@ -12,7 +12,8 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "    <div class=\"slider\" valign-wrapper>\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <img ng-src=\"{{image.imageUrl}}\" ng-click=\"ctrl.enlargeImage(image.imageUrl)\">\n" +
+    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage(image.imageUrl)\">zoom_out_map</i>\n" +
+    "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
     "                    <h5 class=\"light grey-text text-lighten-3\">{{image.slogan}}</h5>\n" +

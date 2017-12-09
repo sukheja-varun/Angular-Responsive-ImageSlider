@@ -3,7 +3,8 @@
     <div class="slider" valign-wrapper>
         <ul class="slides">
             <li ng-repeat="image in ctrl.data">
-                <img ng-src="{{image.imageUrl}}" ng-click="ctrl.enlargeImage(image.imageUrl)">
+                <i class="material-icons zoom-out-icon" ng-click="ctrl.enlargeImage(image.imageUrl)">zoom_out_map</i>
+                <img ng-src="{{image.imageUrl}}">
                 <div class="caption" ng-class="ctrl.options.textAlign">
                     <h3>{{image.tagLine}}</h3>
                     <h5 class="light grey-text text-lighten-3">{{image.slogan}}</h5>

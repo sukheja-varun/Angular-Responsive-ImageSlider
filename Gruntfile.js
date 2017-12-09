@@ -21,8 +21,7 @@ module.exports = function (grunt) {
                     sassDir: 'src/scss',
                     specify: 'src/scss/image_slider.scss',
                     cssDir: 'src/css',
-                    assetCacheBuster: false,
-                    clean:true,
+                    assetCacheBuster: false
                 }
 
             }
