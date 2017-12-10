@@ -10,7 +10,7 @@ To use this template pass `template1` as id to the directive. Check the `data` a
 <image-slider id="mainSlider" template-id="template1" data="imgData" options="options"></image-slider>
 ````
 
-####DATA
+#### DATA
 data has to be an array of objects, where each object contains 3 attributes:
 
 |S# | Attribute | Mandatory | Description |
@@ -43,7 +43,7 @@ Example
 
         ];
 ```
-####OPTIONS
+#### OPTIONS
 check below various configuration options with their descriptions:
 
 | Option Name | Description |
