@@ -24,13 +24,19 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/template2.html',
-    "<div class=\"image-slider template1\" ng-init=\"ctrl.init()\">\n" +
+    "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "        <img class=\"materialboxed\"\n" +
     "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\"\n" +
-    "             ng-src=\"{{ctrl.mainImage}}\">\n" +
-    "        <i class=\"material-icons icon-arrow_left\" ng-click=\"\">keyboard_arrow_left</i>\n" +
-    "        <i class=\"material-icons icon-arrow_right\" ng-click=\"\">keyboard_arrow_right</i>\n" +
+    "             ng-src=\"{{ctrl.data[ctrl.currentImageIndex]}}\">\n" +
+    "        <i class=\"material-icons icon-arrow_left\"\n" +
+    "           ng-if=\"ctrl.displayLeftArrow\"\n" +
+    "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +
+    "        </i>\n" +
+    "        <i class=\"material-icons icon-arrow_right\"\n" +
+    "           ng-if=\"ctrl.displayRightArrow\"\n" +
+    "           ng-click=\"ctrl.nextImg()\">keyboard_arrow_right\n" +
+    "        </i>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"

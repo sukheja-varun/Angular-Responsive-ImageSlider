@@ -29,13 +29,19 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/template2.html',
-    "<div class=\"image-slider template1\" ng-init=\"ctrl.init()\">\n" +
+    "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "        <img class=\"materialboxed\"\n" +
     "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\"\n" +
-    "             ng-src=\"{{ctrl.mainImage}}\">\n" +
-    "        <i class=\"material-icons icon-arrow_left\" ng-click=\"\">keyboard_arrow_left</i>\n" +
-    "        <i class=\"material-icons icon-arrow_right\" ng-click=\"\">keyboard_arrow_right</i>\n" +
+    "             ng-src=\"{{ctrl.data[ctrl.currentImageIndex]}}\">\n" +
+    "        <i class=\"material-icons icon-arrow_left\"\n" +
+    "           ng-if=\"ctrl.displayLeftArrow\"\n" +
+    "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +
+    "        </i>\n" +
+    "        <i class=\"material-icons icon-arrow_right\"\n" +
+    "           ng-if=\"ctrl.displayRightArrow\"\n" +
+    "           ng-click=\"ctrl.nextImg()\">keyboard_arrow_right\n" +
+    "        </i>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"
@@ -136,9 +142,25 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
         self.init = function () {
             self.mainImage = 'https://static.pexels.com/photos/257360/pexels-photo-257360.jpeg';
+            self.currentImageIndex = 0;
             self.options = self.options || {};
             self.options.width = self.options.width || 400;
             self.options.height = self.options.height || 400;
+            checkArrowVisibility();
+        };
+
+        self.prevImg = function () {
+            self.currentImageIndex--;
+            checkArrowVisibility();
+        };
+        self.nextImg = function () {
+            self.currentImageIndex++;
+            checkArrowVisibility();
+        };
+
+        var checkArrowVisibility = function () {
+            self.displayLeftArrow = self.currentImageIndex === 0 ? false : true;
+            self.displayRightArrow = self.currentImageIndex === (self.data.length - 1) ? false : true;
         };
 
         $(document).ready(function () {

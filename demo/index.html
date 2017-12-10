@@ -7,10 +7,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="lib/css/Angular-Responsive-ImageSlider.css" rel="stylesheet">
 </head>
-<body ng-app="image_slider_demo">
+<body ng-app="image_slider_demo" style="padding: 20px">
 <div ng-controller="sliderController">
     <h1>Hello this is Template1</h1>
-    <image-slider id="7" template-id="template2" data="imgData" options="options"></image-slider>
+    <image-slider id="slider1" template-id="template1" data="imgData1" options="options1"></image-slider>
+    <h1>Hello this is Template2</h1>
+    <image-slider id="slider2" template-id="template2" data="imgData2" options="options2"></image-slider>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
