@@ -24,13 +24,16 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/template2.html',
-    "<div >\n" +
-    "    <h1>Hello this is template 2</h1>\n" +
-    "    {{ctrl.name}}\n" +
-    "\n" +
-    "\n" +
-    "    <img class=\"materialboxed\" width=\"650\" src=\"https://static.pexels.com/photos/257360/pexels-photo-257360.jpeg\">\n" +
-    "</div>"
+    "<div class=\"image-slider template1\" ng-init=\"ctrl.init()\">\n" +
+    "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
+    "        <img class=\"materialboxed\"\n" +
+    "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\"\n" +
+    "             ng-src=\"{{ctrl.mainImage}}\">\n" +
+    "        <i class=\"material-icons icon-arrow_left\" ng-click=\"\">keyboard_arrow_left</i>\n" +
+    "        <i class=\"material-icons icon-arrow_right\" ng-click=\"\">keyboard_arrow_right</i>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "\n"
   );
 
 }]);

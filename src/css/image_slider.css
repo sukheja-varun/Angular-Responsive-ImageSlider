@@ -31,3 +31,22 @@
   top: 0%;
   left: 40%;
 }
+
+/* line 2, ../scss/template2.scss */
+.template1 .icon-arrow_left, .template1 .icon-arrow_right {
+  position: absolute;
+  color: #fff;
+  font-size: 35px;
+  background-color: grey;
+  cursor: pointer;
+}
+/* line 9, ../scss/template2.scss */
+.template1 .icon-arrow_left {
+  top: 43%;
+  left: 0px;
+}
+/* line 13, ../scss/template2.scss */
+.template1 .icon-arrow_right {
+  top: 43%;
+  right: 0px;
+}

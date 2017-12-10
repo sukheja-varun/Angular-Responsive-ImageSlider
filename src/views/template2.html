@@ -1,7 +1,10 @@
-<div >
-    <h1>Hello this is template 2</h1>
-    {{ctrl.name}}
-
-
-    <img class="materialboxed" width="650" src="https://static.pexels.com/photos/257360/pexels-photo-257360.jpeg">
+<div class="image-slider template1" ng-init="ctrl.init()">
+    <div class="slider" ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
+        <img class="materialboxed"
+             ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}"
+             ng-src="{{ctrl.mainImage}}">
+        <i class="material-icons icon-arrow_left" ng-click="">keyboard_arrow_left</i>
+        <i class="material-icons icon-arrow_right" ng-click="">keyboard_arrow_right</i>
+    </div>
 </div>
+
