@@ -32,21 +32,31 @@
   left: 40%;
 }
 
-/* line 2, ../scss/template2.scss */
-.template2 .icon-arrow_left, .template2 .icon-arrow_right {
+/* line 3, ../scss/template2.scss */
+.template2 .slider {
+  width: 400px;
+  height: 400px;
+}
+/* line 6, ../scss/template2.scss */
+.template2 .slider .mainImage {
+  width: 400px;
+  height: 400px;
+}
+/* line 10, ../scss/template2.scss */
+.template2 .slider .icon-arrow_left, .template2 .slider .icon-arrow_right {
   position: absolute;
   color: #fff;
   font-size: 35px;
   background-color: grey;
   cursor: pointer;
 }
-/* line 9, ../scss/template2.scss */
-.template2 .icon-arrow_left {
-  top: 43%;
+/* line 17, ../scss/template2.scss */
+.template2 .slider .icon-arrow_left {
+  top: 40%;
   left: 0px;
 }
-/* line 13, ../scss/template2.scss */
-.template2 .icon-arrow_right {
-  top: 43%;
+/* line 21, ../scss/template2.scss */
+.template2 .slider .icon-arrow_right {
+  top: 40%;
   right: 0px;
 }

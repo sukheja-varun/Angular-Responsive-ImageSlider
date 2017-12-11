@@ -3,11 +3,11 @@
   .slider {
     .zoom-out-icon {
       position: absolute;
-      color: #fff;
+      color: $icon-color;
       right: 0px;
       top: 0px;
-      font-size: 35px;
-      background-color: $zoom-out-icon-background;
+      font-size: $icon-size;
+      background-color: $icon-background-color;
       cursor: pointer;
     }
   }

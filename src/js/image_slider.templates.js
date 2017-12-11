@@ -26,7 +26,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
   $templateCache.put('views/template2.html',
     "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
-    "        <img class=\"materialboxed\"\n" +
+    "        <img class=\"materialboxed mainImage\"\n" +
     "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\"\n" +
     "             ng-src=\"{{ctrl.data[ctrl.currentImageIndex]}}\">\n" +
     "        <i class=\"material-icons icon-arrow_left\"\n" +
