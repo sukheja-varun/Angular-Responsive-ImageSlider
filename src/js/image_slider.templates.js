@@ -6,7 +6,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage(image.imageUrl)\">zoom_out_map</i>\n" +
+    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
     "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
@@ -16,7 +16,10 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "        </ul>\n" +
     "    </div>\n" +
     "    <div id=\"template1-modal\" class=\"modal template1-modal\">\n" +
-    "        <img class=\"responsive-img enlarged-image\" ng-src=\"{{ctrl.enlargedImageUrl}}\">\n" +
+    "        <img ng-repeat=\"image in ctrl.data\"\n" +
+    "             class=\"responsive-img enlarged-image\"\n" +
+    "             ng-src=\"{{image.imageUrl}}\"\n" +
+    "             ng-show=\"$index===ctrl.enlargedImageIndex\">\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"
@@ -26,9 +29,13 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
   $templateCache.put('views/template2.html',
     "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
+    "\n" +
     "        <img class=\"materialboxed mainImage\"\n" +
-    "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\"\n" +
-    "             ng-src=\"{{ctrl.data[ctrl.currentImageIndex]}}\">\n" +
+    "             ng-repeat=\"imageUrl in ctrl.data\"\n" +
+    "             ng-show=\"$index === ctrl.currentImageIndex\"\n" +
+    "             ng-src=\"{{imageUrl}}\"\n" +
+    "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
+    "\n" +
     "        <i class=\"material-icons icon-arrow_left\"\n" +
     "           ng-if=\"ctrl.displayLeftArrow\"\n" +
     "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +

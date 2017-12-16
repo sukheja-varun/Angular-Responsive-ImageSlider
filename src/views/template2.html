@@ -1,8 +1,12 @@
 <div class="image-slider template2" ng-init="ctrl.init()">
     <div class="slider" ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
+
         <img class="materialboxed mainImage"
-             ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}"
-             ng-src="{{ctrl.data[ctrl.currentImageIndex]}}">
+             ng-repeat="imageUrl in ctrl.data"
+             ng-show="$index === ctrl.currentImageIndex"
+             ng-src="{{imageUrl}}"
+             ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
+
         <i class="material-icons icon-arrow_left"
            ng-if="ctrl.displayLeftArrow"
            ng-click="ctrl.prevImg()">keyboard_arrow_left

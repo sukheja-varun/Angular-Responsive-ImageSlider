@@ -3,8 +3,8 @@
     var template1Ctrl = function ($scope) {
 
         var self = this;
-        self.enlargeImage = function (imageUrl) {
-            self.enlargedImageUrl = imageUrl;
+        self.enlargeImage = function (index) {
+            self.enlargedImageIndex = index;
             $('#template1-modal').modal('open');
         };
 

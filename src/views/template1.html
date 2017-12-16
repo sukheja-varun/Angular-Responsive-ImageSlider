@@ -2,7 +2,7 @@
     <div class="slider" ng-style="{'width': ctrl.options.width}">
         <ul class="slides">
             <li ng-repeat="image in ctrl.data">
-                <i class="material-icons zoom-out-icon" ng-click="ctrl.enlargeImage(image.imageUrl)">zoom_out_map</i>
+                <i class="material-icons zoom-out-icon" ng-click="ctrl.enlargeImage($index)">zoom_out_map</i>
                 <img ng-src="{{image.imageUrl}}">
                 <div class="caption" ng-class="ctrl.options.textAlign">
                     <h3>{{image.tagLine}}</h3>
@@ -12,7 +12,10 @@
         </ul>
     </div>
     <div id="template1-modal" class="modal template1-modal">
-        <img class="responsive-img enlarged-image" ng-src="{{ctrl.enlargedImageUrl}}">
+        <img ng-repeat="image in ctrl.data"
+             class="responsive-img enlarged-image"
+             ng-src="{{image.imageUrl}}"
+             ng-show="$index===ctrl.enlargedImageIndex">
     </div>
 </div>
 
