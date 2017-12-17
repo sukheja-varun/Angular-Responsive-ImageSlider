@@ -6,7 +6,9 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <i class=\"material-icons slider-icon zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
+    "                <i class=\"material-icons slider-icon zoom-out-icon\"\n" +
+    "                   ng-if=\"ctrl.options.enableZoom\"\n" +
+    "                   ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
     "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
@@ -15,7 +17,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "            </li>\n" +
     "        </ul>\n" +
     "    </div>\n" +
-    "    <div id=\"template1-modal\" class=\"modal template1-modal\">\n" +
+    "    <div id=\"template1-modal\" class=\"modal template1-modal\" ng-if=\"ctrl.options.enableZoom\">\n" +
     "        <img ng-repeat=\"image in ctrl.data\"\n" +
     "             class=\"responsive-img enlarged-image\"\n" +
     "             ng-src=\"{{image.imageUrl}}\"\n" +
@@ -31,7 +33,8 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
-    "        <img class=\"materialboxed mainImage\"\n" +
+    "        <img class=\"mainImage\"\n" +
+    "             ng-class=\"{'materialboxed':ctrl.options.enableZoom}\"\n" +
     "             ng-repeat=\"imageUrl in ctrl.data\"\n" +
     "             ng-show=\"$index === ctrl.currentImageIndex\"\n" +
     "             ng-src=\"{{imageUrl}}\"\n" +

@@ -1,7 +1,8 @@
 <div class="image-slider template2" ng-init="ctrl.init()">
     <div class="slider" ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
 
-        <img class="materialboxed mainImage"
+        <img class="mainImage"
+             ng-class="{'materialboxed':ctrl.options.enableZoom}"
              ng-repeat="imageUrl in ctrl.data"
              ng-show="$index === ctrl.currentImageIndex"
              ng-src="{{imageUrl}}"

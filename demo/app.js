@@ -33,7 +33,8 @@
             height: 500, // if not given, it will take default width of 440px
             width: 600, // if not given, it will take full width of parent
             duration: 200,
-            interval: 4000
+            interval: 4000,
+            enableZoom:true
         };
         /**
          * Data and Config for template2
@@ -47,7 +48,8 @@
         ];
         $scope.options2 = {
             height: 500, // if not given, it will take default width of 400px
-            width: 600, // if not given, it will take full width of 400px
+            width: 600, // if not given, it will take full width of 400px,
+            enableZoom:true
         };
 
 
