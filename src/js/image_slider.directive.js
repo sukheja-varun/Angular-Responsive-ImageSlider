@@ -18,16 +18,16 @@
                 var templateUrl;
                 switch (attrs.templateId) {
                     case 'template1':
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                     case 'template2':
-                        templateUrl = 'views/template2.html';
+                        templateUrl = 'view/template2.html';
                         break;
                     case 'template3':
-                        templateUrl = 'views/template3.html';
+                        templateUrl = 'view/template3.html';
                         break;
                     default:
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                 }
                 return templateUrl;

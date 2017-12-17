@@ -3,30 +3,10 @@
     angular.module('image_slider', ['templateCacher','ngTouch'])
 })();
 
-(function () {
-    'use strict';
-
-    var utilities = function () {
-
-
-        return {
-            isDeviceMobile: function () {
-                if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
-                    return true;
-                }
-                return false;
-            }
-
-        };
-    };
-    angular.module('image_slider')
-        .factory('utilities', [utilities]);
-})();
-
 angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('views/template1.html',
+  $templateCache.put('view/template1.html',
     "<div class=\"image-slider template1\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
@@ -52,7 +32,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
   );
 
 
-  $templateCache.put('views/template2.html',
+  $templateCache.put('view/template2.html',
     "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
@@ -99,16 +79,16 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
                 var templateUrl;
                 switch (attrs.templateId) {
                     case 'template1':
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                     case 'template2':
-                        templateUrl = 'views/template2.html';
+                        templateUrl = 'view/template2.html';
                         break;
                     case 'template3':
-                        templateUrl = 'views/template3.html';
+                        templateUrl = 'view/template3.html';
                         break;
                     default:
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                 }
                 return templateUrl;
@@ -120,6 +100,26 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
     angular.module('image_slider')
         .directive('imageSlider', ['$timeout', imageSliderDirective]);
+})();
+
+(function () {
+    'use strict';
+
+    var utilities = function () {
+
+
+        return {
+            isDeviceMobile: function () {
+                if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
+                    return true;
+                }
+                return false;
+            }
+
+        };
+    };
+    angular.module('image_slider')
+        .factory('utilities', [utilities]);
 })();
 
 (function () {

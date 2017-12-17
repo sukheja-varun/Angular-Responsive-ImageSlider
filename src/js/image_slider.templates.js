@@ -1,7 +1,7 @@
 angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('views/template1.html',
+  $templateCache.put('view/template1.html',
     "<div class=\"image-slider template1\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
@@ -27,7 +27,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
   );
 
 
-  $templateCache.put('views/template2.html',
+  $templateCache.put('view/template2.html',
     "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +

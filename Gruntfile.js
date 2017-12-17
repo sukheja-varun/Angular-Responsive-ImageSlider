@@ -13,7 +13,7 @@ module.exports = function (grunt) {
                 configFile: "conf/eslint.json",
                 fix: true
             },
-            src: ['src/js/*.js']
+            src: ['src/js/**/*.js']
         },
         compass: {
             dist: {
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                     standalone: true
                 },
                 cwd: 'src',
-                src: 'views/**.html',
+                src: 'view/*.html',
                 dest: 'src/js/image_slider.templates.js'
 
             }
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                src: ['src/js/image_slider.js', 'src/js/image_slider.service.*.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js', 'src/js/image_slider.controller.*.js'],
+                src: ['src/js/image_slider.js','src/js/image_slider.templates.js', 'src/js/image_slider.directive.js', 'src/js/service/*.js',  'src/js/controller/*.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
                 tasks: ['clean', 'eslint', 'compass', 'ngtemplates', 'concat', 'uglify', 'copy:css', 'cssmin', 'copy:lib', 'readme_generator']
             },
             scripts: {
-                files: ['src/js/*.js', '!src/js/image_slider.template.js', 'src/views/*.html'],
+                files: ['src/js/*.js', '!src/js/image_slider.template.js', 'src/view/*.html'],
                 tasks: ['clean:scripts', 'clean:jsTemplate', 'clean:lib', 'eslint', 'ngtemplates', 'concat', 'uglify', 'copy:lib']
             },
             scss: {
