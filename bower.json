@@ -4,7 +4,7 @@
   "dependencies": {
     "materialize": "0.100.2",
     "angular": "1.6.7",
-    "angular-spinkit": "0.3.4"
+    "angular-touch": "1.6.7"
   },
   "analytics": false
 }

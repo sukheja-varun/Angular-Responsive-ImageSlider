@@ -6,7 +6,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
+    "                <i class=\"material-icons slider-icon zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
     "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
@@ -20,6 +20,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "             class=\"responsive-img enlarged-image\"\n" +
     "             ng-src=\"{{image.imageUrl}}\"\n" +
     "             ng-show=\"$index===ctrl.enlargedImageIndex\">\n" +
+    "        <i class=\"material-icons slider-icon close-icon\" ng-click=\"ctrl.closeModal()\">close</i>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"
@@ -34,13 +35,15 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "             ng-repeat=\"imageUrl in ctrl.data\"\n" +
     "             ng-show=\"$index === ctrl.currentImageIndex\"\n" +
     "             ng-src=\"{{imageUrl}}\"\n" +
+    "             ng-swipe-left=\"ctrl.prevImg()\"\n" +
+    "             ng-swipe-right=\"ctrl.nextImg()\"\n" +
     "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
-    "        <i class=\"material-icons icon-arrow_left\"\n" +
+    "        <i class=\"material-icons slider-icon icon-arrow_left\"\n" +
     "           ng-if=\"ctrl.displayLeftArrow\"\n" +
     "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +
     "        </i>\n" +
-    "        <i class=\"material-icons icon-arrow_right\"\n" +
+    "        <i class=\"material-icons slider-icon icon-arrow_right\"\n" +
     "           ng-if=\"ctrl.displayRightArrow\"\n" +
     "           ng-click=\"ctrl.nextImg()\">keyboard_arrow_right\n" +
     "        </i>\n" +

@@ -1,6 +1,26 @@
-/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-17 */(function () {
+/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-18 */(function () {
     'use strict';
-    angular.module('image_slider', ['templateCacher'])
+    angular.module('image_slider', ['templateCacher','ngTouch'])
+})();
+
+(function () {
+    'use strict';
+
+    var utilities = function () {
+
+
+        return {
+            isDeviceMobile: function () {
+                if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
+                    return true;
+                }
+                return false;
+            }
+
+        };
+    };
+    angular.module('image_slider')
+        .factory('utilities', [utilities]);
 })();
 
 angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
@@ -11,7 +31,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
+    "                <i class=\"material-icons slider-icon zoom-out-icon\" ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
     "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
@@ -25,6 +45,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "             class=\"responsive-img enlarged-image\"\n" +
     "             ng-src=\"{{image.imageUrl}}\"\n" +
     "             ng-show=\"$index===ctrl.enlargedImageIndex\">\n" +
+    "        <i class=\"material-icons slider-icon close-icon\" ng-click=\"ctrl.closeModal()\">close</i>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"
@@ -39,13 +60,15 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "             ng-repeat=\"imageUrl in ctrl.data\"\n" +
     "             ng-show=\"$index === ctrl.currentImageIndex\"\n" +
     "             ng-src=\"{{imageUrl}}\"\n" +
+    "             ng-swipe-left=\"ctrl.prevImg()\"\n" +
+    "             ng-swipe-right=\"ctrl.nextImg()\"\n" +
     "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
-    "        <i class=\"material-icons icon-arrow_left\"\n" +
+    "        <i class=\"material-icons slider-icon icon-arrow_left\"\n" +
     "           ng-if=\"ctrl.displayLeftArrow\"\n" +
     "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +
     "        </i>\n" +
-    "        <i class=\"material-icons icon-arrow_right\"\n" +
+    "        <i class=\"material-icons slider-icon icon-arrow_right\"\n" +
     "           ng-if=\"ctrl.displayRightArrow\"\n" +
     "           ng-click=\"ctrl.nextImg()\">keyboard_arrow_right\n" +
     "        </i>\n" +
@@ -101,7 +124,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
 (function () {
     'use strict';
-    var template1Ctrl = function ($scope) {
+    var template1Ctrl = function ($scope, utilities) {
 
         var self = this;
         self.enlargeImage = function (index) {
@@ -109,8 +132,16 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
             $('#template1-modal').modal('open');
         };
 
+        self.closeModal = function () {
+            $('#template1-modal').modal('close');
+        };
+
         var displayToast = function () {
-            Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            if (utilities.isDeviceMobile()) {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;X&nbsp;</span>&nbsp; to exit full screen', 4000);
+            } else {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            }
         };
         var destroyAllToast = function () {
             Materialize.Toast.removeAll();
@@ -128,7 +159,6 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
                     endingTop: '0%', // Ending top style attribute
                     ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
                         displayToast();
-                        console.log(modal, trigger);
                     },
                     complete: function () {
                         destroyAllToast();
@@ -139,7 +169,7 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
         });
     };
     angular.module('image_slider')
-        .controller('template1', ['$scope', template1Ctrl]);
+        .controller('template1', ['$scope', 'utilities', template1Ctrl]);
 })();
 
 (function () {

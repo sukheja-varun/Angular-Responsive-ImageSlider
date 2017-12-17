@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                src: ['src/js/image_slider.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js', 'src/js/image_slider.controller.*.js'],
+                src: ['src/js/image_slider.js', 'src/js/image_slider.service.*.js', 'src/js/image_slider.templates.js', 'src/js/image_slider.directive.js', 'src/js/image_slider.controller.*.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
         watch: {
             grunt: {
                 files: ['Gruntfile.js'],
-                tasks: ['clean', 'eslint', 'compass', 'ngtemplates', 'concat', 'uglify', 'copy:css', 'cssmin', 'copy:lib','readme_generator']
+                tasks: ['clean', 'eslint', 'compass', 'ngtemplates', 'concat', 'uglify', 'copy:css', 'cssmin', 'copy:lib', 'readme_generator']
             },
             scripts: {
                 files: ['src/js/*.js', '!src/js/image_slider.template.js', 'src/views/*.html'],
@@ -103,9 +103,9 @@ module.exports = function (grunt) {
                 files: ['src/scss/*.scss'],
                 tasks: ['clean:scss', 'clean:lib', 'compass', 'copy:css', 'cssmin', 'copy:lib'],
             },
-            readme:{
+            readme: {
                 files: ['readme/*.md'],
-                tasks: ['readme_generator:template_generator','readme_generator:my_generator'],
+                tasks: ['readme_generator:template_generator', 'readme_generator:my_generator'],
             }
         },
 
