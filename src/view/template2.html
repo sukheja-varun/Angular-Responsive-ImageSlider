@@ -1,0 +1,23 @@
+<div class="image-slider template2" ng-init="ctrl.init()">
+    <div class="slider" ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
+
+        <img class="mainImage"
+             ng-class="{'materialboxed':ctrl.options.enableZoom}"
+             ng-repeat="imageUrl in ctrl.data"
+             ng-show="$index === ctrl.currentImageIndex"
+             ng-src="{{imageUrl}}"
+             ng-swipe-left="ctrl.prevImg()"
+             ng-swipe-right="ctrl.nextImg()"
+             ng-style="{'width': ctrl.options.width,'height':ctrl.options.height}">
+
+        <i class="material-icons slider-icon icon-arrow_left"
+           ng-if="ctrl.displayLeftArrow"
+           ng-click="ctrl.prevImg()">keyboard_arrow_left
+        </i>
+        <i class="material-icons slider-icon icon-arrow_right"
+           ng-if="ctrl.displayRightArrow"
+           ng-click="ctrl.nextImg()">keyboard_arrow_right
+        </i>
+    </div>
+</div>
+

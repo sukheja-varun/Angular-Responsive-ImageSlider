@@ -1,14 +1,11 @@
 /* line 4, ../scss/template1.scss */
 .template1 .slider .zoom-out-icon {
   position: absolute;
-  color: #fff;
   right: 0px;
   top: 0px;
-  font-size: 35px;
-  background-color: #5a5a5a;
   cursor: pointer;
 }
-/* line 15, ../scss/template1.scss */
+/* line 12, ../scss/template1.scss */
 .template1 .template1-modal {
   max-width: 100%;
   max-height: 100%;
@@ -16,7 +13,14 @@
   height: 100%;
   top: 0 !important;
 }
-/* line 22, ../scss/template1.scss */
+/* line 18, ../scss/template1.scss */
+.template1 .template1-modal .close-icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+/* line 24, ../scss/template1.scss */
 .template1 .template1-modal .enlarged-image {
   position: absolute;
   top: 50%;
@@ -24,10 +28,44 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 31, ../scss/template1.scss */
+/* line 33, ../scss/template1.scss */
 #toast-container {
   bottom: auto !important;
   right: auto !important;
   top: 0%;
   left: 40%;
+}
+
+/* line 3, ../scss/template2.scss */
+.template2 .slider {
+  width: 400px;
+  height: 400px;
+}
+/* line 6, ../scss/template2.scss */
+.template2 .slider .mainImage {
+  width: 400px;
+  height: 400px;
+}
+/* line 10, ../scss/template2.scss */
+.template2 .slider .icon-arrow_left, .template2 .slider .icon-arrow_right {
+  position: absolute;
+  cursor: pointer;
+}
+/* line 14, ../scss/template2.scss */
+.template2 .slider .icon-arrow_left {
+  top: 40%;
+  left: 0px;
+}
+/* line 18, ../scss/template2.scss */
+.template2 .slider .icon-arrow_right {
+  top: 40%;
+  right: 0px;
+}
+
+/* line 6, ../scss/image_slider.scss */
+.image-slider .slider-icon {
+  color: #333;
+  font-size: 35px;
+  background-color: rgba(181, 181, 181, 0.4);
+  font-weight: 900;
 }

@@ -1,4 +1,4 @@
 (function () {
     'use strict';
-    angular.module('image_slider', ['templateCacher'])
+    angular.module('image_slider', ['templateCacher','ngTouch'])
 })();

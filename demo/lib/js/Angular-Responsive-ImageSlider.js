@@ -1,17 +1,19 @@
-/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-10 */(function () {
+/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-18 */(function () {
     'use strict';
-    angular.module('image_slider', ['templateCacher'])
+    angular.module('image_slider', ['templateCacher','ngTouch'])
 })();
 
 angular.module('templateCacher', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('views/template1.html',
+  $templateCache.put('view/template1.html',
     "<div class=\"image-slider template1\">\n" +
     "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width}\">\n" +
     "        <ul class=\"slides\">\n" +
     "            <li ng-repeat=\"image in ctrl.data\">\n" +
-    "                <i class=\"material-icons zoom-out-icon\" ng-click=\"ctrl.enlargeImage(image.imageUrl)\">zoom_out_map</i>\n" +
+    "                <i class=\"material-icons slider-icon zoom-out-icon\"\n" +
+    "                   ng-if=\"ctrl.options.enableZoom\"\n" +
+    "                   ng-click=\"ctrl.enlargeImage($index)\">zoom_out_map</i>\n" +
     "                <img ng-src=\"{{image.imageUrl}}\">\n" +
     "                <div class=\"caption\" ng-class=\"ctrl.options.textAlign\">\n" +
     "                    <h3>{{image.tagLine}}</h3>\n" +
@@ -20,22 +22,42 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
     "            </li>\n" +
     "        </ul>\n" +
     "    </div>\n" +
-    "    <div id=\"template1-modal\" class=\"modal template1-modal\">\n" +
-    "        <img class=\"responsive-img enlarged-image\" ng-src=\"{{ctrl.enlargedImageUrl}}\">\n" +
+    "    <div id=\"template1-modal\" class=\"modal template1-modal\" ng-if=\"ctrl.options.enableZoom\">\n" +
+    "        <img ng-repeat=\"image in ctrl.data\"\n" +
+    "             class=\"responsive-img enlarged-image\"\n" +
+    "             ng-src=\"{{image.imageUrl}}\"\n" +
+    "             ng-show=\"$index===ctrl.enlargedImageIndex\">\n" +
+    "        <i class=\"material-icons slider-icon close-icon\" ng-click=\"ctrl.closeModal()\">close</i>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n"
   );
 
 
-  $templateCache.put('views/template2.html',
-    "<div >\n" +
-    "    <h1>Hello this is template 2</h1>\n" +
-    "    {{ctrl.name}}\n" +
+  $templateCache.put('view/template2.html',
+    "<div class=\"image-slider template2\" ng-init=\"ctrl.init()\">\n" +
+    "    <div class=\"slider\" ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
+    "        <img class=\"mainImage\"\n" +
+    "             ng-class=\"{'materialboxed':ctrl.options.enableZoom}\"\n" +
+    "             ng-repeat=\"imageUrl in ctrl.data\"\n" +
+    "             ng-show=\"$index === ctrl.currentImageIndex\"\n" +
+    "             ng-src=\"{{imageUrl}}\"\n" +
+    "             ng-swipe-left=\"ctrl.prevImg()\"\n" +
+    "             ng-swipe-right=\"ctrl.nextImg()\"\n" +
+    "             ng-style=\"{'width': ctrl.options.width,'height':ctrl.options.height}\">\n" +
     "\n" +
-    "    <img class=\"materialboxed\" width=\"650\" src=\"https://static.pexels.com/photos/257360/pexels-photo-257360.jpeg\">\n" +
-    "</div>"
+    "        <i class=\"material-icons slider-icon icon-arrow_left\"\n" +
+    "           ng-if=\"ctrl.displayLeftArrow\"\n" +
+    "           ng-click=\"ctrl.prevImg()\">keyboard_arrow_left\n" +
+    "        </i>\n" +
+    "        <i class=\"material-icons slider-icon icon-arrow_right\"\n" +
+    "           ng-if=\"ctrl.displayRightArrow\"\n" +
+    "           ng-click=\"ctrl.nextImg()\">keyboard_arrow_right\n" +
+    "        </i>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "\n"
   );
 
 }]);
@@ -60,16 +82,16 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
                 var templateUrl;
                 switch (attrs.templateId) {
                     case 'template1':
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                     case 'template2':
-                        templateUrl = 'views/template2.html';
+                        templateUrl = 'view/template2.html';
                         break;
                     case 'template3':
-                        templateUrl = 'views/template3.html';
+                        templateUrl = 'view/template3.html';
                         break;
                     default:
-                        templateUrl = 'views/template1.html';
+                        templateUrl = 'view/template1.html';
                         break;
                 }
                 return templateUrl;
@@ -85,16 +107,44 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
 
 (function () {
     'use strict';
-    var template1Ctrl = function ($scope) {
+
+    var utilities = function () {
+
+
+        return {
+            isDeviceMobile: function () {
+                if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
+                    return true;
+                }
+                return false;
+            }
+
+        };
+    };
+    angular.module('image_slider')
+        .factory('utilities', [utilities]);
+})();
+
+(function () {
+    'use strict';
+    var template1Ctrl = function ($scope, utilities) {
 
         var self = this;
-        self.enlargeImage = function (imageUrl) {
-            self.enlargedImageUrl = imageUrl;
+        self.enlargeImage = function (index) {
+            self.enlargedImageIndex = index;
             $('#template1-modal').modal('open');
         };
 
+        self.closeModal = function () {
+            $('#template1-modal').modal('close');
+        };
+
         var displayToast = function () {
-            Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            if (utilities.isDeviceMobile()) {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;X&nbsp;</span>&nbsp; to exit full screen', 4000);
+            } else {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            }
         };
         var destroyAllToast = function () {
             Materialize.Toast.removeAll();
@@ -112,7 +162,6 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
                     endingTop: '0%', // Ending top style attribute
                     ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
                         displayToast();
-                        console.log(modal, trigger);
                     },
                     complete: function () {
                         destroyAllToast();
@@ -123,16 +172,34 @@ angular.module('templateCacher', []).run(['$templateCache', function($templateCa
         });
     };
     angular.module('image_slider')
-        .controller('template1', ['$scope', template1Ctrl]);
+        .controller('template1', ['$scope', 'utilities', template1Ctrl]);
 })();
 
 (function () {
     'use strict';
     var template2Ctrl = function ($scope) {
-        var self=this;
+        var self = this;
 
-        self.name = 'sukheja';
-        $(document).ready(function(){
+        self.init = function () {
+            self.currentImageIndex = 0;
+            checkArrowVisibility();
+        };
+
+        self.prevImg = function () {
+            self.currentImageIndex--;
+            checkArrowVisibility();
+        };
+        self.nextImg = function () {
+            self.currentImageIndex++;
+            checkArrowVisibility();
+        };
+
+        var checkArrowVisibility = function () {
+            self.displayLeftArrow = self.currentImageIndex === 0 ? false : true;
+            self.displayRightArrow = self.currentImageIndex === (self.data.length - 1) ? false : true;
+        };
+
+        $(document).ready(function () {
             $('.materialboxed').materialbox();
         });
     };

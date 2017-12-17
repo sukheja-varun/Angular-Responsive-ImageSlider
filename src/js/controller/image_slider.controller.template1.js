@@ -1,15 +1,23 @@
 (function () {
     'use strict';
-    var template1Ctrl = function ($scope) {
+    var template1Ctrl = function ($scope, utilities) {
 
         var self = this;
-        self.enlargeImage = function (imageUrl) {
-            self.enlargedImageUrl = imageUrl;
+        self.enlargeImage = function (index) {
+            self.enlargedImageIndex = index;
             $('#template1-modal').modal('open');
         };
 
+        self.closeModal = function () {
+            $('#template1-modal').modal('close');
+        };
+
         var displayToast = function () {
-            Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            if (utilities.isDeviceMobile()) {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;X&nbsp;</span>&nbsp; to exit full screen', 4000);
+            } else {
+                Materialize.toast('Press &nbsp;<span style="border: 1px solid">&nbsp;ESC&nbsp;</span>&nbsp; to exit full screen', 4000);
+            }
         };
         var destroyAllToast = function () {
             Materialize.Toast.removeAll();
@@ -27,7 +35,6 @@
                     endingTop: '0%', // Ending top style attribute
                     ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
                         displayToast();
-                        console.log(modal, trigger);
                     },
                     complete: function () {
                         destroyAllToast();
@@ -38,5 +45,5 @@
         });
     };
     angular.module('image_slider')
-        .controller('template1', ['$scope', template1Ctrl]);
+        .controller('template1', ['$scope', 'utilities', template1Ctrl]);
 })();

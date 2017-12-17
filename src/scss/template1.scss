@@ -3,11 +3,8 @@
   .slider {
     .zoom-out-icon {
       position: absolute;
-      color: #fff;
       right: 0px;
       top: 0px;
-      font-size: 35px;
-      background-color: $zoom-out-icon-background;
       cursor: pointer;
     }
   }
@@ -18,7 +15,12 @@
     width: 100%;
     height: 100%;
     top: 0 !important;
-
+    .close-icon {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      cursor: pointer;
+    }
     .enlarged-image {
       position: absolute;
       top: 50%;
