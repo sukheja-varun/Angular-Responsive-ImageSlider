@@ -33,7 +33,6 @@ Example
                 tagLine: 'This is our big Tagline!',
                 slogan: 'Here\'s our small slogan.'
             }
-
         ];
 ```
 #### OPTIONS
@@ -41,10 +40,22 @@ check below various configuration options with their descriptions:
 
 | Option Name | Description |
 | ------ | ------ |
-| indicators | Set to false to hide slide indicators. (Default: True) |
+| indicators | Set false to hide slide indicators. (Default: True) |
 | height | Set height of slider. (Default: 400) |
 | width | Set height of slider. (Default: Parent width) |
 | transition | Set the duration of the transition animation in ms. (Default: 500) |
 | interval | Set the duration between transitions in ms. (Default: 6000) |
 | textAlign | Alignment of tag line and slogan (values: left-align / right-align / center-align) |
+| enableZoom | Set true to enable the feature of image zoom (Default: false) |
 
+Example
+```angularjs
+    $scope.options = {
+               textAlign: 'center-align',
+               indicators: true,
+               height: 500, 
+               duration: 200,
+               interval: 4000,
+               enableZoom:true
+           };
+```

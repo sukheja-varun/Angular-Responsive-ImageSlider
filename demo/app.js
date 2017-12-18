@@ -28,7 +28,6 @@
         ];
         $scope.options1 = {
             textAlign: 'center-align', // values: 'left-align'|'right-align'|'center-align'
-            //below options are from materializecss slider
             indicators: true,
             height: 500, // if not given, it will take default width of 440px
             duration: 200,
