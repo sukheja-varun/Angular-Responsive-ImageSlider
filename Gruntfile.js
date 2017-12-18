@@ -104,7 +104,7 @@ module.exports = function (grunt) {
                 tasks: ['clean:scss', 'clean:lib', 'compass', 'copy:css', 'cssmin', 'copy:lib'],
             },
             readme: {
-                files: ['readme/*.md'],
+                files: ['readme/**/*.md'],
                 tasks: ['readme_generator:template_generator', 'readme_generator:my_generator'],
             }
         },
@@ -139,6 +139,7 @@ module.exports = function (grunt) {
                     // Title of the piece and the File name goes here
                     // "Filename" : "Title"
                     "template1.md": "Template1",
+                    "template2.md": "Template2",
                 }
             },
             my_generator: {
@@ -170,8 +171,8 @@ module.exports = function (grunt) {
                     // "Filename" : "Title"
                     "installation.md": "💾 Installation",
                     "usage.md": "▶️ Usage",
-                    "template.md": "Templates",
-                    "example.md": "Examples",
+                    "template.md": "🔌Templates",
+                    "example.md": "💡Examples",
                     "legal.md": "🎓 License"
                 }
             }

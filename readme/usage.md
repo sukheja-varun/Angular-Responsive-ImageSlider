@@ -24,4 +24,4 @@ OR
 | data | images you want to display |
 | options | various configuration parameters |
 
-NOTE: `data and options keep chnaging with their templates.`
+NOTE: `data and options keep changing with their templates.`
