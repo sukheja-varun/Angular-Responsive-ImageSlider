@@ -1,4 +1,4 @@
-/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-18 */(function () {
+/* Angular-Responsive-ImageSlider - v0.0.1 - 2017-12-19 */(function () {
     'use strict';
     angular.module('image_slider', ['templateCacher','ngTouch'])
 })();

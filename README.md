@@ -1,7 +1,7 @@
 # Angular-Responsive-ImageSlider 
 [![Build Status](https://secure.travis-ci.org/sukheja-varun/Angular-Responsive-ImageSlider.png?branch=develop)](http://travis-ci.org/sukheja-varun/Angular-Responsive-ImageSlider)
 
-> A repsonsive image slider developed using angularjs and materializecss
+> A repsonsive image slider developed using angularjs-1 and materializecss
 
 ## Jump to Section
 
@@ -191,7 +191,8 @@ Example
 ## 💡Examples
 [[Back To Top]](#jump-to-section)
 
-
+* **Temaplate1**: https://codepen.io/sukheja-varun/pen/NXxBPe
+* **Temaplate2**: https://codepen.io/sukheja-varun/pen/XVXobe
 
 ## 🎓 License
 [[Back To Top]](#jump-to-section)

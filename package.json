@@ -2,12 +2,10 @@
   "name": "Angular-Responsive-ImageSlider",
   "namelower": "angular-responsive-imageslider",
   "version": "0.0.1",
-  "description": "A repsonsive image slider developed using angularjs and materializecss",
+  "description": "A repsonsive image slider developed using angularjs-1 and materializecss",
   "readme": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sukheja-varun/Angular-Responsive-ImageSlider.git"
-  },
+  "main": "dist/js/Angular-Responsive-ImageSlider.js",
+  "style": "dist/css/Angular-Responsive-ImageSlider.css",
   "devDependencies": {
     "grunt": "~0.4.0",
     "grunt-angular-templates": "^1.1.0",
@@ -21,8 +19,31 @@
     "grunt-readme-generator": "^0.3.41",
     "gruntify-eslint": "^4.0.0"
   },
+  "keywords": [
+    "image-slider",
+    "images",
+    "slider",
+    "carousel",
+    "angularjs",
+    "materialize",
+    "html",
+    "javascript",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukheja-varun/Angular-Responsive-ImageSlider"
+  },
+  "author": "Varun Sukheja <sukheja.varun@gmail.com> (https://www.logic24by7.com)",
+  "contributors": [
+    "Varun Sukheja <sukheja.varun@gmail.com> (https://github.com/sukheja-varun)"
+  ],
   "scripts": {
     "postinstall": "bower install"
   },
+  "bugs": {
+    "url": "https://github.com/sukheja-varun/Angular-Responsive-ImageSlider/issues"
+  },
+  "homepage": "https://github.com/ShoppinPal/AutoComplete#readme",
   "license": "MIT"
 }
