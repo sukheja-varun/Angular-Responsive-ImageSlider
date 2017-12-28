@@ -5,11 +5,11 @@
 
 ## Jump to Section
 
-* [💾 Installation](#💾-installation)
-* [▶️ Usage](#▶️-usage)
-* [🔌Templates](#🔌templates)
-* [💡Examples](#💡examples)
-* [🎓 License](#🎓-license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Templates](#templates)
+* [Examples](#examples)
+* [License](#license)
 
 ## 💾 Installation
 [[Back To Top]](#jump-to-section)
@@ -20,14 +20,6 @@ As a `Dependency` in your project using bower
 
 ```bash
 bower install angular-responsive-imageslider --save
-```
-
-### NPM
-
-As a `Dependency` in your project using npm
-
-```bash
-npm install angular-responsive-imageslider --save
 ```
 
 Add this as a `dependency` to `bower.json/package.json`:
@@ -73,7 +65,7 @@ OR
 
 NOTE: `data and options keep changing with their templates.`
 
-## 🔌Templates
+## 🔌 Templates
 [[Back To Top]](#jump-to-section)
 
 ### Jump to Section
@@ -188,7 +180,7 @@ Example
 
 
 
-## 💡Examples
+## 💡 Examples
 [[Back To Top]](#jump-to-section)
 
 * **Temaplate1**: https://codepen.io/sukheja-varun/pen/NXxBPe

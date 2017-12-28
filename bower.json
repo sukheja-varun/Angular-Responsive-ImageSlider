@@ -41,6 +41,7 @@
     "conf",
     "npm-shrinkwrap.json",
     "Gruntfile.js",
+    "package.json"
   ],
   "analytics": false
 }

@@ -169,11 +169,11 @@ module.exports = function (grunt) {
                 order: {
                     // Title of the piece and the File name goes here
                     // "Filename" : "Title"
-                    "installation.md": "💾 Installation",
-                    "usage.md": "▶️ Usage",
-                    "template.md": "🔌Templates",
-                    "example.md": "💡Examples",
-                    "legal.md": "🎓 License"
+                    "installation.md": "Installation",
+                    "usage.md": "Usage",
+                    "template.md": "Templates",
+                    "example.md": "Examples",
+                    "legal.md": "License"
                 }
             }
         }
