@@ -1,0 +1,13 @@
+
+@import "template1";
+@import "template2";
+.image-slider {
+  @import "image_sliderVariable";
+  .slider-icon{
+    color: $icon-color;
+    font-size: $icon-size;
+    background-color: $icon-background-color;
+    font-weight: $icon-weight;
+  }
+}
+

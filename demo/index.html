@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="lib/css/Angular-Responsive-ImageSlider.css" rel="stylesheet">
+</head>
+<body ng-app="image_slider_demo" style="padding: 20px">
+<div ng-controller="sliderController">
+    <h1>Hello this is Template1</h1>
+    <image-slider id="slider1" template-id="template1" data="imgData1" options="options1"></image-slider>
+    <h1>Hello this is Template2</h1>
+    <image-slider id="slider2" template-id="template2" data="imgData2" options="options2"></image-slider>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.js"></script>
+<script src="app.js"></script>
+<script src="lib/js/Angular-Responsive-ImageSlider.js"></script>
+</body>
+</html>

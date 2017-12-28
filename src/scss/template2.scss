@@ -1,0 +1,26 @@
+.template2 {
+  @import "template2Variables";
+  .slider {
+    width: $default-width;
+    height: $default-height;
+    .mainImage {
+      width: $default-width;
+      height: $default-height;
+    }
+    .icon-arrow_left, .icon-arrow_right {
+      position: absolute;
+      cursor: pointer;
+    }
+    .icon-arrow_left {
+      top:$icon-top-position;
+      left: 0px;
+    }
+    .icon-arrow_right {
+      top:$icon-top-position;
+      right: 0px;
+    }
+  }
+}
+
+
+

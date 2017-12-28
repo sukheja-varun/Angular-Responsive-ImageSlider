@@ -1,0 +1,47 @@
+{
+  "name": "angular-responsive-imageslider",
+  "description": "A repsonsive image slider developed using angularjs-1 and materializecss",
+  "main": [
+    "dist/js/Angular-Responsive-ImageSlider.js",
+    "dist/css/Angular-Responsive-ImageSlider.css"
+  ],
+  "dependencies": {
+    "materialize": "0.100.2",
+    "angular": "1.6.7",
+    "angular-touch": "1.6.7"
+  },
+  "keywords": [
+    "image-slider",
+    "images",
+    "slider",
+    "carousel",
+    "angularjs",
+    "materialize",
+    "html",
+    "javascript",
+    "css"
+  ],
+  "authors": [
+    "Varun Sukheja <sukheja.varun@gmail.com> (https://www.logic24by7.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukheja-varun/Angular-Responsive-ImageSlider"
+  },
+  "homepage": "https://github.com/ShoppinPal/AutoComplete#readme",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "demo",
+    ".sass-cache",
+    ".idea",
+    "src",
+    "conf",
+    "npm-shrinkwrap.json",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "analytics": false
+}
