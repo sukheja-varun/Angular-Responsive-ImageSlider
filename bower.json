@@ -13,13 +13,31 @@
   "keywords": [
     "image-slider",
     "images",
-    "slider",
-    "carousel",
+    "angular",
     "angularjs",
+    "carousel",
+    "website",
+    "slider",
+    "material design",
+    "materialize css",
     "materialize",
+    "material css",
+    "material",
     "html",
     "javascript",
-    "css"
+    "css",
+    "web design",
+    "html5",
+    "css3",
+    "responsive",
+    "jquery",
+    "web development",
+    "slider",
+    "web design (interest)",
+    "design",
+    "responsive web design (industry)",
+    "image",
+    "web"
   ],
   "authors": [
     "Varun Sukheja <sukheja.varun@gmail.com> (https://www.logic24by7.com)"
@@ -28,7 +46,7 @@
     "type": "git",
     "url": "https://github.com/sukheja-varun/Angular-Responsive-ImageSlider"
   },
-  "homepage": "https://github.com/ShoppinPal/AutoComplete#readme",
+  "homepage": "https://github.com/sukheja-varun/Angular-Responsive-ImageSlider#readme",
   "license": "MIT",
   "ignore": [
     "**/.*",

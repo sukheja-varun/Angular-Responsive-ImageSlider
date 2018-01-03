@@ -1,5 +1,18 @@
 # Angular-Responsive-ImageSlider 
-[![Build Status](https://secure.travis-ci.org/sukheja-varun/Angular-Responsive-ImageSlider.png?branch=develop)](http://travis-ci.org/sukheja-varun/Angular-Responsive-ImageSlider)
+![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)
+[![GitHub version](https://badge.fury.io/gh/sukheja-varun%2FAngular-Responsive-ImageSlider.svg)](https://badge.fury.io/gh/sukheja-varun%2FAngular-Responsive-ImageSlider)
+[![bower](https://img.shields.io/bower/v/angular-responsive-imageslider.svg)]()
+[![HitCount](http://hits.dwyl.io/sukheja-varun/Angular-Responsive-ImageSlider.svg)](http://hits.dwyl.io/sukheja-varun/Angular-Responsive-ImageSlider)
+[![NSP Status](https://nodesecurity.io/orgs/sukheja-varun/projects/4bf1fb70-5f27-4842-882f-5a69bd046eb4/badge)](https://nodesecurity.io/orgs/sukheja-varun/projects/4bf1fb70-5f27-4842-882f-5a69bd046eb4)
+[![dependencies Status](https://img.shields.io/david/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap)
+[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap?type=dev)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![MIT License](https://img.shields.io/github/license/sukheja-varun/Angular-Responsive-ImageSlider.svg)](https://github.com/sukheja-varun/Angular-Responsive-ImageSlider/blob/develop/LICENSE)
+[![CSS gzip size](http://img.badgesize.io/sukheja-varun/Angular-Responsive-ImageSlider/master/dist/css/Angular-Responsive-ImageSlider.min.css?compression=gzip&label=CSS+gzip+size)](https://github.com/sukheja-varun/Angular-Responsive-ImageSlider/blob/master/dist/css/Angular-Responsive-ImageSlider.min.css)
+[![JS gzip size](http://img.badgesize.io/sukheja-varun/Angular-Responsive-ImageSlider/master/dist/js/Angular-Responsive-ImageSlider.min.js?compression=gzip&label=JS+gzip+size)](https://github.com/sukheja-varun/Angular-Responsive-ImageSlider/blob/master/dist/js/Angular-Responsive-ImageSlider.min.js)
+
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/sukheja-varun/Angular-Responsive-ImageSlider.svg)](https://beta.gemnasium.com/projects/github.com/sukheja-varun/Angular-Responsive-ImageSlider)
+
 
 > A repsonsive image slider developed using angularjs-1 and materializecss
 
@@ -11,7 +24,7 @@
 * [Examples](#examples)
 * [License](#license)
 
-## 💾 Installation
+## 💾Installation
 [[Back To Top]](#jump-to-section)
 
 ### Bower
@@ -34,18 +47,13 @@ Add this as a `dependency` to `bower.json/package.json`:
 }
 ```
 
-## ▶️ Usage
+## ▶️Usage
 [[Back To Top]](#jump-to-section)
 
-1. Add Angular-Responsive-ImageSlider.min.js and Angular-Responsive-ImageSlider.min.css to your main file (index.html)
+1. Add Angular-Responsive-ImageSlider.js and Angular-Responsive-ImageSlider.css to your main file (index.html)
   ```html
-  <link rel="stylesheet" href="bower_components/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.min.css">
-  <script src="bower_components/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.min.js"></script>
-  ```
-OR
-  ```html
-  <link rel="stylesheet" href="node_modules/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.min.css">
-  <script src="node_modules/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.min.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.css"/>
+  <script src='bower_components/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.js'></script>
   ```
 
 2. Set `angular-responsive-imageslider` as a dependency in your module
@@ -65,7 +73,7 @@ OR
 
 NOTE: `data and options keep changing with their templates.`
 
-## 🔌 Templates
+## 🔌Templates
 [[Back To Top]](#jump-to-section)
 
 ### Jump to Section
@@ -180,13 +188,13 @@ Example
 
 
 
-## 💡 Examples
+## 💡Examples
 [[Back To Top]](#jump-to-section)
 
 * **Temaplate1**: https://codepen.io/sukheja-varun/pen/NXxBPe
 * **Temaplate2**: https://codepen.io/sukheja-varun/pen/XVXobe
 
-## 🎓 License
+## 🎓License
 [[Back To Top]](#jump-to-section)
 
 Copyright © 2017 [Varun Sukheja](https://github.com/sukheja-varun)

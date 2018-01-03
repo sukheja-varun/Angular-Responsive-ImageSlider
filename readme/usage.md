@@ -1,12 +1,7 @@
-1. Add Angular-Responsive-ImageSlider.min.js and Angular-Responsive-ImageSlider.min.css to your main file (index.html)
+1. Add Angular-Responsive-ImageSlider.js and Angular-Responsive-ImageSlider.css to your main file (index.html)
   ```html
-  <link rel="stylesheet" href="bower_components/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.min.css">
-  <script src="bower_components/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.min.js"></script>
-  ```
-OR
-  ```html
-  <link rel="stylesheet" href="node_modules/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.min.css">
-  <script src="node_modules/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.min.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-responsive-imageslider/dist/css/Angular-Responsive-ImageSlider.css"/>
+  <script src='bower_components/angular-responsive-imageslider/dist/js/Angular-Responsive-ImageSlider.js'></script>
   ```
 
 2. Set `angular-responsive-imageslider` as a dependency in your module

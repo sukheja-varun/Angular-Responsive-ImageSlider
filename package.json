@@ -7,14 +7,14 @@
   "main": "dist/js/Angular-Responsive-ImageSlider.js",
   "style": "dist/css/Angular-Responsive-ImageSlider.css",
   "devDependencies": {
-    "grunt": "~0.4.0",
+    "grunt": "^1.0.1",
     "grunt-angular-templates": "^1.1.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
-    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-readme-generator": "^0.3.41",
     "gruntify-eslint": "^4.0.0"
